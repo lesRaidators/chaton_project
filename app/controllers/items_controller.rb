@@ -1,8 +1,6 @@
 class ItemsController < ApplicationController
-  
   def index
     @items = Item.all
-    
   end
 
   def show
@@ -22,20 +20,4 @@ class ItemsController < ApplicationController
 
   def destroy
   end
-  
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
