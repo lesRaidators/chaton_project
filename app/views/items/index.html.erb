@@ -1,2 +1,31 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<div class = "header">
+  <div class="jumbotron text-center">
+    <h1 class="display-3 font-size-48--md-down">Le roi des chats</h1>
+    <p class="lead font-weight-bold">Les chats.</p>
+    <p class=" text-center"> Un site dedié aux amoureux des chats.</p> 
+    <p class ="lead text-center">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </p>
+  </div>
+</div>
+
+
+<div class="row ">
+  <% @items.each do |items|%>
+    <div class="col-lg-4 col-md-6 mb-4">
+    <div class="card h-100">
+      <img class="card-img-top"><%= items.image_url %><alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= items.title %></h5>
+        <button type="button" class="btn btn-outline-primary"><%= link_to "Voir détails", item_path(items.id) %></button>
+        <p class="card-text"><small class="text-muted"><%= items.price %>€</small></p>
+      </div>
+    </div>
+  </div>
+  
+  <% end %>
+</div>
+   
+
+   
+   
