@@ -1,0 +1,93 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="form-group" data-children-count="1">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true %>
+  </div>
+
+
+
+  <div class="form-group" data-children-count="1">
+  <label for="exampleInputPassword1">Password</label>
+  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" data-kwimpalastatus="alive" data-kwimpalaid="1605002699794-0">
+<fieldset class="form-group">
+</div>
+
+
+
+  <div class="field form-control">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autofocus: true %>
+  </div>
+
+  <div class="field form-control">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field form-control">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field form-control">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+
+
+
+
+
+<div class="row"></div>
+<div class=" col-sm-2 col-lg-4 col-m-6">
+  <form class="form-signin p-5">
+    <fieldset>
+
+      <div class="form-group" data-children-count="1">
+        <label for="exampleInputEmail1"><%= f.label :email %></label>
+        <div class="form-control", id="exampleInputEmail1"> <%= f.email_field :email, autofocus: true, autocomplete: "email"%></div>
+        <small id="emailHelp" class="form-text text-muted">We ll never share your email with anyone else.</small>
+      </div>
+
+      <div class="form-group" data-children-count="1">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" data-kwimpalastatus="alive" data-kwimpalaid="1605002699794-0">
+      <fieldset class="form-group">
+      </div>
+        <legend>Checkboxes</legend>
+        <div class="form-check">
+          <label class="form-check-label" data-children-count="1">
+            <input class="form-check-input" type="checkbox" value="" checked="">
+            Option one is this and that—be sure to include why it's great
+          </label>
+        </div>
+        <div class="form-check disabled">
+          <label class="form-check-label" data-children-count="1">
+            <input class="form-check-input" type="checkbox" value="" disabled="">
+            Option two is disabled
+          </label>
+        </div>
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </fieldset>
+  </form>
+</div>
+</div>
+
+<% end %>
+
+
+
+
+
