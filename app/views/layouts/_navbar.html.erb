@@ -11,10 +11,13 @@
             <span class="sr-only">(current)</span>
         </li>
         <li class="nav-item active">
-          <%= link_to "Log in", new_user_session_path, class:"dropdown-item" %> 
+          <%= link_to "Log in", new_user_session_path, class:"nav-link" %> 
         </li>
         <li class="nav-item active">
-         <%= link_to "Inscription", new_user_registration_path, class:"dropdown-item" %> 
+         <%= link_to "Inscription", new_user_registration_path, class:"nav-link" %> 
+        </li>
+        <li class="nav-item active">
+         <%= link_to "Log out",  destroy_user_session_path, method: :delete, class:"nav-link" %>
         </li>
       </ul>
       <form class="btn-group-inline my-2 my-lg-0" data-children-count="1">
@@ -25,7 +28,6 @@
                 My profile
               </button>
               <div class="dropdown-menu">
-                <%= link_to "Profile", user_path(current_user.id), class:"dropdown-item" %> 
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
               </div>
             </div>

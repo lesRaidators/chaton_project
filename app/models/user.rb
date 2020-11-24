@@ -7,4 +7,9 @@ class User < ApplicationRecord
   validates_presence_of :first_name, :last_name
 
   has_many :carts
+
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
+  end
+  
 end
