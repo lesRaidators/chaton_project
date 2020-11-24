@@ -18,7 +18,7 @@
       <div class="card-body">
         <h5 class="card-title"><%= items.title %></h5>
         <button type="button" class="btn btn-outline-primary"><%= link_to "Voir détails", item_path(items.id) %></button>
-        <button type="button" class="btn btn-outline-primary"><%= link_to "Ajouter au panier", line_items_path(item_id: items.id) %></button>
+        <button type="button" class="btn btn-outline-primary"><%= link_to "Ajouter au panier", lineitems_path(items_id: items.id), method: 'POST' %></button>
         <p class="card-text"><small class="text-muted"><%= items.price %>€</small></p>
       </div>
     </div>
