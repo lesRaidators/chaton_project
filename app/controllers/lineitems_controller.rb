@@ -1,7 +1,7 @@
 require 'pry'
 class LineitemsController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only[:create]
+  before_action :set_cart, only: [:create]
 
   def index
     
