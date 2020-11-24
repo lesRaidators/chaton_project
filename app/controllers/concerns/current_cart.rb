@@ -1,4 +1,3 @@
-
 module CurrentCart
 
   def set_cart
