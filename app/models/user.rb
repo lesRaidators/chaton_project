@@ -6,5 +6,16 @@ class User < ApplicationRecord
 
   validates_presence_of :first_name, :last_name
 
-  has_many  :cart
+  has_many :carts
+
+  has_many :orders
+
+  has_one_attached :avatar
+
+  after_create :welcome_send
+
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
+  end
+
 end

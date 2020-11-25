@@ -65,3 +65,10 @@ gem 'faker'
 gem 'table_print'
 gem 'devise'
 gem 'rails-erd'
+
+
+gem 'pry'
+
+gem 'dotenv-rails'
+gem  'mailjet'
+

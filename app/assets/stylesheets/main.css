@@ -147,4 +147,5 @@ ul{
 
 footer{
   position: absolute;
+  min-width: 100%;
 }
