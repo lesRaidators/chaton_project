@@ -71,4 +71,4 @@ gem 'pry'
 
 gem 'dotenv-rails'
 gem  'mailjet'
-
+gem 'stripe'
