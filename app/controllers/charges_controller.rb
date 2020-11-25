@@ -1,10 +1,12 @@
+require 'pry'
 class ChargesController < ApplicationController
   def new
   end
   
   def create
-    # Amount in cents
-    @amount = 500
+    @cart = current_user.cart
+    @amount = (@cart.total * 100).to_i
+
   
     customer = Stripe::Customer.create({
       email: params[:stripeEmail],
@@ -18,6 +20,13 @@ class ChargesController < ApplicationController
       currency: 'usd',
     })
   
+    @order = Order.create(stripe_customer_id: customer.id, user_id: current_user.id)
+
+    
+    @cart.lineitems.destroy_all
+  
+  redirect_to root_path
+
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path

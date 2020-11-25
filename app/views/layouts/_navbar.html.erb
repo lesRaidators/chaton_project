@@ -29,3 +29,50 @@
   </div>
 </nav>
 
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <%= link_to "Accueil", items_path, class:"nav-link" %> 
+            <span class="sr-only">(current)</span>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Log in", new_user_session_path, class:"nav-link" %> 
+        </li>
+        <li class="nav-item active">
+         <%= link_to "Inscription", new_user_registration_path, class:"nav-link" %> 
+        </li>
+        <li class="nav-item active">
+         <%= link_to "Log out",  destroy_user_session_path, method: :delete, class:"nav-link" %>
+        </li>
+        <li class="nav-item active">
+        <%= link_to "Mon Panier", class:"nav-link" %>
+        </li>
+      </ul>
+      <form class="btn-group-inline my-2 my-lg-0" data-children-count="1">
+        <ul>
+          <%if user_signed_in?%>
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                My profile
+              </button>
+              <div class="dropdown-menu">
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
+              </div>
+            </div>
+          <%else%>
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Log in / Inscription
+              </button>
+              <div class="dropdown-menu">
+                <%= link_to "Log in", new_user_session_path, class:"dropdown-item" %> 
+                <%= link_to "Inscription", new_user_registration_path, class:"dropdown-item" %> 
+              </div>
+            </div>
+          <%end%>
+        </ul>
+      </form>
+    </div>
+  </nav>
+
