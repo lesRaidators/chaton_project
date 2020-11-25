@@ -21,10 +21,11 @@ class ChargesController < ApplicationController
     })
   
     @order = Order.create(stripe_customer_id: customer.id, user_id: current_user.id)
-binding.pry
 
+    
     @cart.lineitems.destroy_all
   
+  redirect_to root_path
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
