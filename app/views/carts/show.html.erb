@@ -1,10 +1,13 @@
 <h1>Panier</h1>
-<h3>Voici tes choix <%= @cart.user_id %> </h3>
+<p>Voici tes choix <%= @cart.user_id %> </p>
 
 <ul>
-<p>Liste</p>
-<% @cart.lineitems.each do |product|%>
-    <li><%=product.item.title%>(x<%=product.quantity%>)</li>
-    <%end%>
+<h4>Liste</h4>
+<% @cart.lineitems.each do |product| %>
+    <li><%= product.item.title %>(x<%= product.quantity %>) : <%= product.total %></li>
+    <p><%= product.item.price %>€</p>
+    <%= button_to 'Supprimer', product, method: :delete, data: { confirm: "t'es sur?"}, class: 'btn btn-danger'%>
+    <% end %>
 </ul>
 
+<p> Total <%= @cart.total %>€</p>
