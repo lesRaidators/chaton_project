@@ -8,11 +8,18 @@ class LineitemsController < ApplicationController
   end
 
   def create
-    binding.pry 
+    
     item = Item.find(params[:items_id])
-    @lineitem = @cart.lineitem.create(item)
-
-    redirect_to @lineitem.cart, notice: 'Line item was successfully created.'
+    @lineitem = @cart.add_item(item)
+   
+    
+    respond_to do |format|
+      if @lineitem.save 
+        format.html {redirect_to @lineitem.cart, notice: 'Line item was successfully created.'}
+      else 
+        format.html {render :new}
+      end
+    end
   end
 
   def show

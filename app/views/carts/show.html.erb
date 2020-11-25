@@ -1,0 +1,10 @@
+<h1>Panier</h1>
+<h3>Voici tes choix <%= @cart.user_id %> </h3>
+
+<ul>
+<p>Liste</p>
+<% @cart.lineitems.each do |product|%>
+    <li><%=product.item.title%>(x<%=product.quantity%>)</li>
+    <%end%>
+</ul>
+
