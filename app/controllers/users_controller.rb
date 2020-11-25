@@ -20,7 +20,6 @@ class UsersController < ApplicationController
     end
     if @user.save # essaie de sauvegarder en base @gossip
         flash[:success] = "You successfuly created your account"
-        UserMailer.with(user: @user).welcome_email.deliver_now
         redirect_to :controller => 'users', :action => 'index'
     else
       # This line overrides the default rendering behavior, which
