@@ -17,10 +17,14 @@ class ChargesController < ApplicationController
       customer: customer.id,
       amount: @amount,
       description: 'Rails Stripe customer',
-      currency: 'usd',
+      currency: 'eur',
     })
-  
+
     @order = Order.create(stripe_customer_id: customer.id, user_id: current_user.id)
+
+    @order_item = @cart.lineitems.each do |item|
+      OrderForm.create(item_id: item.id, order_id: @order.id)
+    end
 
     
     @cart.lineitems.destroy_all
