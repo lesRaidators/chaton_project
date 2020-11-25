@@ -25,6 +25,12 @@ class LineitemsController < ApplicationController
   def show
   end
 
+  def destroy
+    @lineitem = Lineitem.find(params[:id])
+    @lineitem.destroy
+    redirect_to @lineitem.cart
+  end
+
   private 
 
   def set_lineitem

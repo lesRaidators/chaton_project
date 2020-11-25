@@ -14,5 +14,9 @@ class Cart < ApplicationRecord
         end
         product
     end
+
+    def total 
+        lineitems.to_a.sum(&:total)
+    end
 end
 

@@ -1,6 +1,13 @@
+
 class CartsController < ApplicationController
 
     def show 
-        @carts = Cart.find(params[id])     
+        @cart = Cart.find(params[:id])     
     end
+
+    def destroy
+        @carts = Cart.find(params[:id])
+        @carts.destroy
+      end
+
 end
