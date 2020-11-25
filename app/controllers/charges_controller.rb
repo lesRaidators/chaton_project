@@ -1,17 +1,12 @@
+require 'pry'
 class ChargesController < ApplicationController
   def new
-    @cart = Cart.find(params[:cart_id])
-    @price = @item.total
-    @amount = @price * 100
   end
   
   def create
-    @cart = Cart.find(params[:cart_id])
-    @price = @cart.total
-    @amount = @price * 100
+    @cart = current_user.cart
+    @amount = (@cart.total * 100).to_i
 
-    # Amount in cents
-    @amount = 500
   
     customer = Stripe::Customer.create({
       email: params[:stripeEmail],
@@ -25,12 +20,10 @@ class ChargesController < ApplicationController
       currency: 'usd',
     })
   
-    if customer.save && charge.save
-      order  = Order.create(user_id: current_user.id, item_id: @charge.id, stripe_customer_id: customer.id)
-        redirect_to root_path
-      else
-        render 'new'
-      end
+    @order = Order.create(stripe_customer_id: customer.id, user_id: current_user.id)
+binding.pry
+
+    @cart.lineitems.destroy_all
   
 
   rescue Stripe::CardError => e

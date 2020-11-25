@@ -12,5 +12,6 @@
 
 <p> Total <%= @cart.total %>€</p>
 
+<p><%= render 'stripe' %><p>
 
 <%= button_to 'Valider le panier', charges_path(cart_id: @cart.id), method: 'POST', class: 'btn btn-success'%>
