@@ -11,3 +11,6 @@
 </ul>
 
 <p> Total <%= @cart.total %>€</p>
+
+
+<%= button_to 'Valider le panier', charges_path(cart_id: @cart.id), method: 'POST', class: 'btn btn-success'%>

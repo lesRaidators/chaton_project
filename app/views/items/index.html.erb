@@ -22,7 +22,7 @@
 
         <% if user_signed_in? %>
 
-        <button type="button" class="btn btn-outline-primary"><%= link_to "Ajouter au panier", lineitems_path(items_id: items.id), method: 'POST' %></button>
+        <button type="button" class="btn btn-outline-primary"><%= link_to "Ajouter au panier", lineitems_path(item_id: items.id), method: 'POST' %></button>
 
         <% else %>
         

@@ -1,8 +1,15 @@
 class ChargesController < ApplicationController
   def new
+    @cart = Cart.find(params[:cart_id])
+    @price = @item.total
+    @amount = @price * 100
   end
   
   def create
+    @cart = Cart.find(params[:cart_id])
+    @price = @cart.total
+    @amount = @price * 100
+
     # Amount in cents
     @amount = 500
   
@@ -18,6 +25,14 @@ class ChargesController < ApplicationController
       currency: 'usd',
     })
   
+    if customer.save && charge.save
+      order  = Order.create(user_id: current_user.id, item_id: @charge.id, stripe_customer_id: customer.id)
+        redirect_to root_path
+      else
+        render 'new'
+      end
+  
+
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path

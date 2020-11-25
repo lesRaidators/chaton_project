@@ -1,4 +1,3 @@
-require 'pry'
 class LineitemsController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:create]
@@ -9,7 +8,7 @@ class LineitemsController < ApplicationController
 
   def create
     
-    item = Item.find(params[:items_id])
+    item = Item.find(params[:item_id])
     @lineitem = @cart.add_item(item)
    
     
