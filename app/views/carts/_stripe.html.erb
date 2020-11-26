@@ -14,5 +14,11 @@
           data-description='Payez votre commande'
           data-amount=<%=  @cart.total * 100 %>
           data-locale="auto"></script>
+      <script>
+        // Hide default stripe button, be careful there if you
+        // have more than 1 button of that class
+        document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+    </script>
+    <button type="submit" class="stripe-button-el">Confirmer mon panier</button>
   <% end %>
 <% end %>

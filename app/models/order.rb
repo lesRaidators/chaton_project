@@ -12,7 +12,7 @@ class Order < ApplicationRecord
 
     def order_save
         puts " ==== INFORMATION MAIL METHOD STARTING === "
-        OrderMailer.with(order: @order).new_order_email.deliver_now
+        OrderMailer.new_order_email(@order).deliver_now
     end
 
 end
