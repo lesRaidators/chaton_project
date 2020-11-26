@@ -11,7 +11,15 @@
           <span class="sr-only">(current)</span>
         </a>
       </li>
-  
+      <% if user_signed_in? %>
+      <li class="nav-item active">
+      <%= link_to "Panier", cart_path(current_user.id), class:"nav-link" %> <i class="fas fa-shopping-cart"></i> <b>
+      <span class="sr-only">(current)</span>
+     </a>
+    </li>
+    <%else%>
+
+    <%end%>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
         <div class="dropdown-menu">

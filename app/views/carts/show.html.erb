@@ -1,12 +1,14 @@
-<h1>Panier de <%= @cart.user.first_name %> </h1>
+<h1><%= @cart.user.first_name %>, voici votre panier </h1>
  
 
 <ul>
 <% @cart.lineitems.each do |product| %>
-    <li><%= product.item.title %><%= product.quantity %></li>
-    <p><%= product.item.price %>€</p>
-    <%= button_to 'Supprimer', product, method: :delete, class: 'btn btn-danger'%>
-    <% end %>
+  <h3><%= product.item.title %></h3>
+  <img> <%=image_tag product.item.image_url %></img>
+  <li> Quantité : <%= product.quantity %></li>
+  <p><%= product.item.price %>€</p>
+  <%= button_to 'Supprimer', product, method: :delete, class: 'btn btn-danger'%>
+  <% end %>
 </ul>
 
 <% if @cart.lineitems.length != 0 %>
@@ -25,3 +27,5 @@
 </div>
 </div> 
 
+
+<%# <%= render 'shopping_cart_page' %>
