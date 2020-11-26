@@ -16,7 +16,6 @@ Item.destroy_all
       title: fitem,
       description: Faker::ChuckNorris.fact,
       price: Faker::Number.decimal(l_digits: 2),
-      image_url: Faker::Name.last_name)
+      image_url: Faker::Creature::Cat.image)
   puts "Seeding of Item nb #{x}"
 end
-

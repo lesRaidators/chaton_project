@@ -126,16 +126,28 @@ ul{
   list-style-type:none;
 }
 
-/*------------------------- CAT PAGE------------------------- */
+/*------------------------- EVENT PAGE------------------------- */
 
-.catpage{
+.pageevent{
   background-color: #d2d5d8 !important;
 }
 
 
-.colorcatpage{
+.colorevent{
   background-color: rgb(255, 255, 255) !important;
 
+}
+
+/* ------------------------- INDEX PAGE------------------------- */
+
+.indextitle {
+  margin-bottom: auto;
+  font-size: x-large;
+  color: red;
+}
+
+.buttonindex {
+  background-color: #4CAF50;
 }
 
 
@@ -144,11 +156,8 @@ ul{
 footer{
   position: absolute;
   min-width: 100%;
-  background-color: #F3D7D1;
 }
-.datefooter{
-  margin-left: 3%;
-}
+
 /* -------------------------SHOPPING CART PAGE-------------------- */
 
 
@@ -271,24 +280,4 @@ body.skin-light {
 }
 .shadow-none {
   box-shadow: none!important;
-}
-
-.boardcontrol {
-  padding: 5%;
-}
-
-.actions {
-  padding: 1%;
-}
-
-.changepassword, .deleteaccount, .orderscompilation {
-  margin-left: 1%;
-}
-
-.deleteaccount{
-  margin-top: 5%;
-}
-
-.changepassword{
-  padding: 1%;
 }

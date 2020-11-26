@@ -1,13 +1,14 @@
-<h1>Panier</h1>
-<p>Voici tes choix <%= @cart.user_id %> </p>
+<h1><%= @cart.user.first_name %>, voici votre panier </h1>
+ 
 
 <ul>
-<h4>Liste</h4>
 <% @cart.lineitems.each do |product| %>
-    <li><%= product.item.title %>(x<%= product.quantity %>) : <%= product.total %></li>
-    <p><%= product.item.price %>€</p>
-    <%= button_to 'Supprimer', product, method: :delete, data: { confirm: "t'es sur?"}, class: 'btn btn-danger'%>
-    <% end %>
+  <h3><%= product.item.title %></h3>
+  <img> <%=image_tag product.item.image_url %></img>
+  <li> Quantité : <%= product.quantity %></li>
+  <p><%= product.item.price %>€</p>
+  <%= button_to 'Supprimer', product, method: :delete, class: 'btn btn-danger'%>
+  <% end %>
 </ul>
 
 <% if @cart.lineitems.length != 0 %>
@@ -20,6 +21,11 @@
 <% end %>
 </div>
 
-<p><%= render 'stripe' %><p>
+<div class="container mt-5 mb-3 text-center w-50 card-center">
+<div id="stripe" class="mt-2">
+  <%= render 'stripe' %>
+</div>
+</div> 
 
-<%= button_to 'Valider le panier', charges_path(cart_id: @cart.id), method: 'POST', class: 'btn btn-success'%>
+
+<%# <%= render 'shopping_cart_page' %>
