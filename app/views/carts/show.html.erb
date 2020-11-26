@@ -3,7 +3,7 @@
 
 <ul>
 <% @cart.lineitems.each do |product| %>
-    <li><%= product.item.title %><%= product.quantity %> </li>
+    <li><%= product.item.title %><%= product.quantity %></li>
     <p><%= product.item.price %>€</p>
     <%= button_to 'Supprimer', product, method: :delete, class: 'btn btn-danger'%>
     <% end %>
