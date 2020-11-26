@@ -73,3 +73,6 @@ gem 'pry'
 gem 'dotenv-rails'
 gem 'stripe'
 gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
+
+
+
