@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Salut <%= @user.first_name %> voici ta commande :)</h1>
+    <p>
+    <ul>
+<% @cart.lineitems.each do |product| %>
+  <img> <%=image_tag product.item.image_url %> </img>
+  <% end %>
+</ul>
+
+<p> Un  grand merci de la part de toute l'équipe de Catoune, et à bientot</p>
+    </div>
+  </body>
+</html>
