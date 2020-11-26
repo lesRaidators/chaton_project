@@ -1,0 +1,57 @@
+  
+  <body class= "catpage" >
+    <header>
+    </header>  
+
+      <div class= "colorcatpage container col-10">
+        <div class="row mb-3">
+          <div class="col-md-8 themed-grid-col">
+            <div class="block-image">
+               <img class="img-thumbnail" sizes="720px";><%= image_tag  @item.image_url%>
+          </div>
+          </div>
+          
+          <div class="col-6 col-md-4 mb-4 themed-grid-col">
+              <p>Information du catoone trop choupitoune</p>
+              <h5 class="card-title"><%= @item.title %></h5>
+              <p class="card-text"><%= @item.description%></p>
+              <h5 class="card-price"><%= @item.price%>€</h5>
+              <% if user_signed_in? %>
+              <button type="button" class="btn btn-outline-primary"><%= link_to "Ajouter au panier", lineitems_path(item_id: @item.id), method: 'POST' %></button>
+              <% else %>
+              <%end%>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-lg-10 themed-grid-col">
+          
+            <ul class="nav nav-pills nav-fill">
+              <li class="nav-item">
+                <a  href="#"> <i class="fas fa-share-square fa-2x" ></i></a>
+              </li>
+              <li class="nav-item">
+                <a  href="#">  <i class="fab fa-gratipay fa-2x"></i></a>
+              </li>
+              <li class="nav-item">
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-8 themed-grid-col">
+          </div>
+          <div class="col-6 col-md-4 themed-grid-col">
+            <h5 class="card-title">PS:</h5>
+            <p class="card-text">Venez avec une musolière lorsque vous viendrez le récupérer</p>
+          </div>
+        </div>
+        
+      </div>
+    
+
+
+  </body>
+
+    

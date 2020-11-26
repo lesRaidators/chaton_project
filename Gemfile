@@ -62,7 +62,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'faker'
+gem 'faker', :git => 'https://github.com/ZeddBox/faker_fr.git', :branch => 'master'
 gem 'table_print'
 gem 'devise'
 gem 'rails-erd'
@@ -73,3 +73,6 @@ gem 'pry'
 gem 'dotenv-rails'
 gem 'stripe'
 gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
+
+
+ 
