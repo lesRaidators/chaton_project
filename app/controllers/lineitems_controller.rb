@@ -8,8 +8,8 @@ class LineitemsController < ApplicationController
   end
 
   def create
-    
-    item = Item.find(params[:items_id])
+  
+    item = Item.find(params[:item_id])
     @lineitem = @cart.add_item(item)
    
     
@@ -23,6 +23,12 @@ class LineitemsController < ApplicationController
   end
 
   def show
+  end
+
+  def destroy
+    @lineitem = Lineitem.find(params[:id])
+    @lineitem.destroy
+    redirect_to @lineitem.cart
   end
 
   private 

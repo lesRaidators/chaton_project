@@ -1,10 +1,25 @@
 <h1>Panier</h1>
-<h3>Voici tes choix <%= @cart.user_id %> </h3>
+<p>Voici tes choix <%= @cart.user_id %> </p>
 
 <ul>
-<p>Liste</p>
-<% @cart.lineitems.each do |product|%>
-    <li><%=product.item.title%>(x<%=product.quantity%>)</li>
-    <%end%>
+<h4>Liste</h4>
+<% @cart.lineitems.each do |product| %>
+    <li><%= product.item.title %>(x<%= product.quantity %>) : <%= product.total %></li>
+    <p><%= product.item.price %>€</p>
+    <%= button_to 'Supprimer', product, method: :delete, data: { confirm: "t'es sur?"}, class: 'btn btn-danger'%>
+    <% end %>
 </ul>
 
+<% if @cart.lineitems.length != 0 %>
+<div class="container mt-5">
+  <div class="card mt-2 mb-3 text-center card-center">
+    <h5 class="mb-4 action-banner" >Prix total : <%= @cart.total %> €</h5>
+    <p>Une fois le réglement effectué vous recevrez vos photos de chats directement sur votre email !</p>
+<% else %>
+    <p> Votre panier est vide </p>
+<% end %>
+</div>
+
+<p><%= render 'stripe' %><p>
+
+<%= button_to 'Valider le panier', charges_path(cart_id: @cart.id), method: 'POST', class: 'btn btn-success'%>

@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2020_11_24_212147) do
-
+ActiveRecord::Schema.define(version: 2020_11_25_205432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,9 +62,21 @@ ActiveRecord::Schema.define(version: 2020_11_24_212147) do
     t.index ["item_id"], name: "index_lineitems_on_item_id"
   end
 
-  create_table "orders", force: :cascade do |t|
+  create_table "order_forms", force: :cascade do |t|
+    t.bigint "order_id", null: false
+    t.bigint "item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_order_forms_on_item_id"
+    t.index ["order_id"], name: "index_order_forms_on_order_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "stripe_customer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -77,6 +87,10 @@ ActiveRecord::Schema.define(version: 2020_11_24_212147) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -87,4 +101,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_212147) do
   add_foreign_key "carts", "users"
   add_foreign_key "lineitems", "carts"
   add_foreign_key "lineitems", "items"
+  add_foreign_key "order_forms", "items"
+  add_foreign_key "order_forms", "orders"
+  add_foreign_key "orders", "users"
 end
