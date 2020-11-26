@@ -1,78 +1,46 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <%= link_to "Le Roi des Chats", root_path, class:"navbar-brand" %> 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://kit.fontawesome.com/17892e5f3b.js" crossorigin="anonymous"></script>
 
-  <div class="collapse navbar-collapse" id="navbarColor02">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-         <%= link_to "Accueil", items_path, class:"nav-link" %> 
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
-  
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
-        <div class="dropdown-menu">
-        <%if user_signed_in?%>
-          <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
-          <%= link_to "Profil", edit_user_registration_path, class:"dropdown-item" %>
-        <%else%>
-          <%= link_to "Inscription", new_user_registration_path, class:"dropdown-item" %>
-          <%= link_to "Log in", new_user_session_path, class:"dropdown-item" %>
-        <%end%> 
-        </div>
-      </li>
-    </ul>
+  </head>
 
-  </div>
-</nav>
-
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <%= link_to "Le Roi des Chats", root_path, class:"navbar-brand" %> 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <%= link_to "Accueil", items_path, class:"nav-link" %> 
+          <%= link_to "Accueil", items_path, class:"nav-link" %> 
             <span class="sr-only">(current)</span>
+          </a>
         </li>
-        <li class="nav-item active">
-          <%= link_to "Connexion", new_user_session_path, class:"nav-link" %> 
-        </li>
-        <li class="nav-item active">
-         <%= link_to "Inscription", new_user_registration_path, class:"nav-link" %> 
-        </li>
-        <li class="nav-item active">
-         <%= link_to "Log out",  destroy_user_session_path, method: :delete, class:"nav-link" %>
-        </li>
-        <li class="nav-item active">
-        <%= link_to "Mon Panier", class:"nav-link" %>
+        
+    
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
+          <div class="dropdown-menu">
+          <%if user_signed_in?%>
+            <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
+            <%= link_to "Profil", edit_user_registration_path, class:"dropdown-item" %>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Mon panier <i class="fas fa-shopping-cart"></i>
+
+              </a>
+            </li>
+          <%else%>
+            <%= link_to "Inscription", new_user_registration_path, class:"dropdown-item" %>
+            <%= link_to "Log in", new_user_session_path, class:"dropdown-item" %>
+          <%end%> 
+          </div>
         </li>
       </ul>
-      <form class="btn-group-inline my-2 my-lg-0" data-children-count="1">
-        <ul>
-          <%if user_signed_in?%>
-            <div class="btn-group">
-              <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                My profile
-              </button>
-              <div class="dropdown-menu">
-                <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
-              </div>
-            </div>
-          <%else%>
-            <div class="btn-group">
-              <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Log in / Inscription
-              </button>
-              <div class="dropdown-menu">
-                <%= link_to "Log in", new_user_session_path, class:"dropdown-item" %> 
-                <%= link_to "Inscription", new_user_registration_path, class:"dropdown-item" %> 
-              </div>
-            </div>
-          <%end%>
-        </ul>
-      </form>
     </div>
+
+      
   </nav>
 
+</html>
