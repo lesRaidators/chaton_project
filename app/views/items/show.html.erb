@@ -1,3 +1,7 @@
+
+<main class="container mb-5 mt-5">
+
+
 <div class= "colorevent container col-10">
  <div class="row mb-3">
    <div class="col-md-8 themed-grid-col">
@@ -9,7 +13,7 @@
 <div class="col-6 col-md-4 mb-4 themed-grid-col">
     <h5 class="card-title"><%= @item.title %></h5>
     <p class="card-text"><%= @item.description%></p>
-    <p class="card-price"><%= @item.price%>€</p>
+    <h5 class="card-price"><%= @item.price%>€</h5>
 
     <% if user_signed_in? %>
     <button type="button" class="btn btn-outline-primary"><%= link_to "Ajouter au panier", lineitems_path(item_id: @item.id), method: 'POST' %></button>
@@ -18,3 +22,7 @@
    </div>
  </div>
 </div>
+</main>
+
+
+
