@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   
   resources :items 
   resources :lineitems
- 
+  resources :orders
 
   resources :users, only: [:show] do
     resources :avatars, only: [:create]

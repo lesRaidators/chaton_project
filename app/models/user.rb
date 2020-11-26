@@ -1,6 +1,9 @@
 class User < ApplicationRecord
+
+
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable, :trackable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, 
          :confirmable
@@ -8,9 +11,13 @@ class User < ApplicationRecord
   validates_presence_of :first_name, :last_name
 
   has_one :cart
+
   has_many :items, through: :carts
   has_many :orders
+
+
   has_one_attached :avatar
+
   after_create :welcome_send
 
   def welcome_send

@@ -10,7 +10,11 @@
     <h5 class="card-title"><%= @item.title %></h5>
     <p class="card-text"><%= @item.description%></p>
     <p class="card-price"><%= @item.price%>€</p>
+
+    <% if user_signed_in? %>
     <button type="button" class="btn btn-outline-primary"><%= link_to "Ajouter au panier", lineitems_path(item_id: @item.id), method: 'POST' %></button>
+    <% else %>
+    <%end%>
    </div>
  </div>
 </div>
