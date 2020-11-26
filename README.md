@@ -1,28 +1,29 @@
-# README PLEASE  : ) 
+# README PLEASE  :octocat:
 
-#MISSION CHATON :octocat:
+# MISSION CHATON 
 
-Cet application est un e-shop de *photos de chatons*, réaliser dans le but d'apprendre en équipe, et merge nos compétences.  Il a été réalisé en quatre jours. 
+Cet application est un e-shop de *photos de chatons*, réaliser dans le but d'apprendre en équipe, et merger nos compétences.  Il a été réalisé en quatre jours. 
 
-##CONSIGNES 
+## CONSIGNES 
 
-- Notre lien heroku: https://project-chaton-development.herokuapp.com/
-- Téléchargez/pull depuis la branche main
+Notre lien heroku: https://project-chaton-development.herokuapp.com/
+Téléchargez/pull depuis la branche main
 
-###OUTILS 
+### BOITE À OUTILS 
 
 * Bootstrap
 * Ruby on Rails 
 * Active Storage
+* Active Record
 
-####API 
+#### API 
 Nous avons implémenté les API suivantes: 
 
 * Stripe 
-* Sendgrid
+* Mailjet
  
 
-###FONCTIONNALITÉS
+### FONCTIONNALITÉS
 
 - [x] Pacourir les différents produits
 - [x] Afficher les détails
@@ -33,9 +34,8 @@ Nous avons implémenté les API suivantes:
 - [x] Se connecter et deconnecter
 - [x]
 
-####BUGS CONNUS 
 
-###MODELS 
+### MODELS 
 
 * User = utilisateurs
 * Item = produit
@@ -44,13 +44,13 @@ Nous avons implémenté les API suivantes:
 * Order = commande 
 * OrderForm = bon de commande 
 
-###CRÈDIT 
+### CRÉDIT 
 
 Merci à ce fameux eventbright, à Charlotte Favier, et notre cher communauté de The Hacking Project. 
 
 Notre plus grande inspiration http://www.confetti-webdesign.de/ 
 
 
-###EQUIPE 
+### ÉQUIPE 
 
 Emilie Aussage, Emma Le Goof, Louison Boisselier et Lola Leandri 
