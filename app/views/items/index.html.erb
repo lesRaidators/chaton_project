@@ -13,7 +13,7 @@
   <% @items.each do |items|%>
     <div class="col-lg-4 col-md-6 mb-4">
     <div class="card h-100">
-      <img class="card-img-top"><%= image_tag items.image_url %><alt="Card image cap">
+      <img class="card-img-top"><%= items.image_url %><alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title"><%= items.title %></h5>
         <button type="button" class="btn btn-outline-primary"><%= link_to "Voir détails", item_path(items.id) %></button>
