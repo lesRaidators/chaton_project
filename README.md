@@ -5,7 +5,9 @@
 Cet application est un e-shop de *photos de chatons*, réaliser dans le but d'apprendre en équipe, et merge nos compétences.  Il a été réalisé en quatre jours. 
 
 ##CONSIGNES 
-Téléchargez/pull depuis la branche development 
+
+- Notre lien heroku: https://project-chaton-development.herokuapp.com/
+- Téléchargez/pull depuis la branche main
 
 ###OUTILS 
 
@@ -50,3 +52,5 @@ Notre plus grande inspiration http://www.confetti-webdesign.de/
 
 
 ###EQUIPE 
+
+Emilie Aussage, Emma Le Goof, Louison Boisselier et Lola Leandri 
