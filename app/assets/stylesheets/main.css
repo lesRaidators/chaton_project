@@ -9,7 +9,7 @@ body {
   color: #ffffff;
 }
 
-/* PAGE AUTHENTIFICATION */
+/* -------------------------PAGE AUTHENTIFICATION -------------------------*/
 
 .main-head{
   height: 150px;
@@ -96,29 +96,37 @@ body {
   padding: 2rem !important;
 }
 
-/* PAGE BANNER */
+/* -------------------------PAGE BANNER------------------------- */
 
 .homescreen{
-  background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80');  
+  background-image: url('https://i.pinimg.com/originals/4c/ab/17/4cab17cfcfda453945d5baadef5cf6d9.jpg');  
   background-size: cover; 
-  padding: 10%; 
+  padding: 16%; 
   filter:grayscale(90%);
 }
 
 .headerpagesbackground{
-  background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80'); 
+  background-image: url('https://i.pinimg.com/originals/e3/f4/ed/e3f4edf7dc47359b20bd4176f88735cb.jpg'); 
   background-size: cover; 
   padding: 10%; 
   filter:grayscale(90%);
 }
 
-/* PAGE CARDS */
+.bannertitle{
+  color: black;
+  font-family: 'Paytone One';
+  text-shadow: #2A3D4E 1px 1px;
+/* just copy this */
+}
+
+
+/* -------------------------PAGE CARDS------------------------- */
 
 ul{
   list-style-type:none;
 }
 
-/* EVENT PAGE */
+/*------------------------- EVENT PAGE------------------------- */
 
 .pageevent{
   background-color: #d2d5d8 !important;
@@ -130,7 +138,7 @@ ul{
 
 }
 
-/* INDEX PAGE */
+/* ------------------------- INDEX PAGE------------------------- */
 
 .indextitle {
   margin-bottom: auto;
@@ -143,9 +151,115 @@ ul{
 }
 
 
-/* FOOTER */ 
+/* -------------------------FOOTER------------------------- */ 
 
 footer{
   position: absolute;
   min-width: 100%;
 }
+
+/* -------------------------SHOPPING CART PAGE-------------------- */
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+section {
+    display: block;
+}
+body.skin-light {
+    color: #4f4f4f;
+}
+
+.bodycartpage {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+:root {
+    --wp-admin-theme-color: #007cba;
+    --wp-admin-theme-color-darker-10: #006ba1;
+    --wp-admin-theme-color-darker-20: #005a87;
+}
+
+.margindiv {
+  width:400px;
+  margin: 20px;
+}
+
+
+
+/* ------------PROFIL PAGE -------------- */
+
+
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #BA68C8
+}
+
+.profile-button {
+  background: rgb(99, 39, 120);
+  box-shadow: none;
+  border: none
+}
+
+.profile-button:hover {
+  background: #682773
+}
+
+.profile-button:focus {
+  background: #682773;
+  box-shadow: none
+}
+
+.profile-button:active {
+  background: #682773;
+  box-shadow: none
+}
+
+.back:hover {
+  color: #682773;
+  cursor: pointer
+}
+
+.labels {
+  font-size: 11px
+}
+

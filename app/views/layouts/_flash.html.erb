@@ -1,0 +1,7 @@
+<% flash.each do |msg| %>
+  <%= msg %>
+<% end %>
+OR
+<% if alert.present? %> # or :notice
+ <%= alert %>
+<% end %>
