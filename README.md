@@ -6,7 +6,7 @@ Cet application est un e-shop de *photos de chatons*, réaliser dans le but d'ap
 
 ## CONSIGNES 
 
-- Notre lien heroku: https://project-chaton-development.herokuapp.com/
+- Notre lien heroku: https://project-chaton.herokuapp.com/
 - Téléchargez/pull depuis la branche main
 
 ### OUTILS 
