@@ -1,5 +1,9 @@
 # README PLEASE  : ) 
 
+
+
+
+
 # MISSION CHATON :octocat:
 
 Cet application est un e-shop de *photos de chatons*, réaliser dans le but d'apprendre en équipe, et merge nos compétences.  Il a été réalisé en quatre jours. 
@@ -31,7 +35,7 @@ Nous avons implémenté les API suivantes:
 - [x] Supprimer produits
 - [x] Commander en payant  
 - [x] Se connecter et deconnecter
-- [x] 
+- [x] and more
 
 
 ### MODELS 
