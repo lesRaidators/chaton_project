@@ -56,4 +56,4 @@ Notre plus grande inspiration http://www.confetti-webdesign.de/
 
 ### EQUIPE 
 
-Emilie Aussage, Emma Le Goof, Louison Boisselier et Lola Leandri 
+Emilie Aussage, Emma Le Goff, Louison Boisselier et Lola Leandri 
